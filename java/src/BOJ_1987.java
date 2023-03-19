@@ -10,6 +10,7 @@ public class BOJ_1987 {
     static Character[][] board;
     static int dr[] = {-1, 0, 1, 0};
     static int dc[] = {0, -1, 0, 1};
+    static boolean[] visited = new boolean[26];
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -25,7 +26,7 @@ public class BOJ_1987 {
             }
         }
 
-        dfs(0, 0, new ArrayList<Character>());
+        dfs(0, 0, 0);
         System.out.println(ans);
     }
 
@@ -34,16 +35,17 @@ public class BOJ_1987 {
         return true;
     }
 
-    public static void dfs(int r, int c, List<Character> path) {
-        if (path.contains(board[r][c])) return;
-        path.add(board[r][c]);
-        ans = Math.max(ans, path.size());
+    public static void dfs(int r, int c, int cnt) {
+        int x = board[r][c]-65;
+        if (visited[x]) return;
+        visited[x] = true;
+        ans = Math.max(ans, ++cnt);
         for (int i=0;i<4;i++) {
             int nr = r + dr[i];
             int nc = c + dc[i];
             if (!inRange(nr,nc)) continue;
-            dfs(nr, nc, path);
+            dfs(nr, nc, cnt);
         }
-        path.remove(path.size() - 1);
+        visited[x] = false;
     }
 }
