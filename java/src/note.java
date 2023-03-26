@@ -7,17 +7,20 @@ public class note {
         return 1;
     }
 
+    static class Point {
+        int x, y;
+        public Point(int x, int y) {
+            this.x = x;
+            this.y = y;
+        }
+    }
+
     public static String[] f() {
         return new String[]{"asd","ASd"};
     }
     public static void main(String[] args) {
-        ArrayList<Integer>[] arr = new ArrayList[5];
-        for(int i=0;i<5;i++) {
-            arr[i] = new ArrayList<>();
-        }
-        arr[0].add(5);
-
-        System.out.println(arr[0].get(0));
-
+        Point point1 = new Point(1,2);
+        Point point2 = new Point(1,2);
+        System.out.println(point1 == point2);
     }
 }
