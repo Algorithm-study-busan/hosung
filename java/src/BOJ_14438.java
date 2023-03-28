@@ -7,7 +7,7 @@ public class BOJ_14438 {
     static int N, M;
     static int[] arr;
 
-    static final int INF = 987654321;
+    static final int INF = Integer.MAX_VALUE;
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -61,7 +61,7 @@ public class BOJ_14438 {
         }
 
         public int min(int idx, int left, int right, int start, int end) {
-            if (end < left || start > right) return 987654321;
+            if (end < left || start > right) return INF;
             if (start <= left && right <= end) return tree[idx];
             int mid = (left + right) / 2;
             return Math.min(min(idx * 2, left, mid, start, end),
