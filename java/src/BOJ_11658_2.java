@@ -36,7 +36,8 @@ public class BOJ_11658_2 {
                 int r = Integer.parseInt(st.nextToken());
                 int c = Integer.parseInt(st.nextToken());
                 int x = Integer.parseInt(st.nextToken());
-                int diff = x - fenwickTree2D.sumRec(r, c, r, c);
+                int diff = x - board[r][c];
+                board[r][c] = x;
                 fenwickTree2D.update(r, c, diff);
             }
             else {
