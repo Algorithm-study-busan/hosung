@@ -7,6 +7,7 @@ public class BOJ_11658_2 {
     static int N,M;
     static int[][] board;
     public static void main(String[] args) throws IOException {
+
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringBuilder sb = new StringBuilder();
 
