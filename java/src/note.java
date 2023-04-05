@@ -1,72 +1,54 @@
-import java.awt.*;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.util.*;
-
 public class note {
-    static LinkedList<Integer>[] edges;
-    static boolean visited[];
-
-
-    public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st = new StringTokenizer(br.readLine());
-        int N = Integer.parseInt(st.nextToken());
-        int M = Integer.parseInt(st.nextToken());
-        int S = Integer.parseInt(st.nextToken());
-        edges = new LinkedList[N + 1];
-        visited = new boolean[N + 1];
-        for (int i = 0; i <= N; i++) {
-            edges[i] = new LinkedList<Integer>();
-        }
-
-        for (int i = 0; i < M; i++) {
-            st = new StringTokenizer(br.readLine());
-            int a = Integer.parseInt(st.nextToken());
-            int b = Integer.parseInt(st.nextToken());
-            edges[a].add(b);
-            edges[b].add(a);
-        }
-        for (int i = 0; i <= N; i++) {
-            Collections.sort(edges[i]);
-        }
-        dfs(S);
-        visited = new boolean[N + 1];
-        System.out.println();
-        bfs(S);
-
-        int[] dr = new int[]{-1, 0, 1, 0};
-        int[] dc = new int[]{0, -1, 0, 1};
-
-
-
-
-    }
-
-    static void dfs(int cur) {
-        visited[cur] = true;
-        System.out.print(cur + " ");
-        for (int next : edges[cur]) {
-            if (visited[next]) continue;
-            dfs(next);
-        }
-    }
-
-
-    static void bfs(int start) {
-        Queue<Integer> q = new LinkedList<Integer>();
-        q.add(start);
-        visited[start] = true;
-        while (!q.isEmpty()) {
-            int cur = q.poll();
-            System.out.print(cur + " ");
-            for (int next : edges[cur]) {
-                if (visited[next]) continue;
-                visited[next] = true;
-                q.add(next);
+    static int count=0;
+    static int k;
+    static int N;
+    static boolean[][] map;
+    static void countHome(int a, int b){
+        int[] dx = {1,0,-1,0};
+        int[] dy = {0,1,0,-1};
+        k++;
+        if (map[a][b]) {
+            for (int i = 0; i < 4; i++) {
+                if (a+dx[i]<0 || a+dx[i] >= N || b+dy[i]<0 ||b+dy[i]>=N) {
+                    continue;
+                }
+                map[a][b] = false;
+                if (map[a+dx[i]][b+dy[i]]){
+                    countHome(a+dx[i], b+dy[i]);
+                }
             }
         }
     }
-
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        N = Integer.parseInt(br.readLine());
+        map = new boolean[N][N];
+        for (int i = 0; i < N; i++) {
+            String b = br.readLine();
+            for (int j = 0; j < N; j++) {
+                if (b.charAt(j) == '1') {
+                    map[i][j] = true;
+                }
+                else map[i][j] = false;
+            }
+        }
+        List<Integer> result = new ArrayList<>();
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j < N; j++) {
+                if(map[i][j]){
+                    k = 0;
+                    countHome(i,j);
+                    result.add(k);
+                    count++;
+                }
+            }
+        }
+        System.out.println(count);
+        Collections.sort(result);
+        for(int res : result) {
+            System.out.println(res);
+        }
+    }
 }
