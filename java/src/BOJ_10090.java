@@ -16,7 +16,7 @@ public class BOJ_10090 {
 
         StringTokenizer st = new StringTokenizer(br.readLine());
         for (int i = 1; i <= N; i++) {
-            int x = Integer.parseInt(st.nextToken());
+            int x = Integer.parseInt    (st.nextToken());
             ans += segTree.get(1, 1, N, x);
             segTree.update(1, 1, N, x);
         }
