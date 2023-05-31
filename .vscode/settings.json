@@ -4,5 +4,6 @@
         "*.html": "django-html",
         "vector": "cpp",
         "ostream": "cpp"
-    }
+    },
+    "C_Cpp.errorSquiggles": "disabled"
 }
