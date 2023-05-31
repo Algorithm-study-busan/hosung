@@ -12,7 +12,9 @@ int main() {
     for (int i=0;i<N;i++) {
         int x; cin >> x;
         sum += x;
+        ans += count[sum - K];
         count[sum] += 1;
-        ans += count[K]
     }
+    ans += count[K];
+    cout << ans;
 }
