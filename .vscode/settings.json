@@ -3,6 +3,7 @@
         "*.ejs": "html",
         "*.html": "django-html",
         "vector": "cpp",
-        "ostream": "cpp"
+        "ostream": "cpp",
+        "iostream": "cpp"
     },
 }
