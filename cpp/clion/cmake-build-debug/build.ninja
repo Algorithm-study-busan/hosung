@@ -49,8 +49,8 @@ cmake_ninja_workdir = /Users/hosung/Workspace/hosung/cpp/clion/cmake-build-debug
 
 build cmake_object_order_depends_target_clion: phony || CMakeFiles/clion.dir
 
-build CMakeFiles/clion.dir/BOJ_18116.cpp.o: CXX_COMPILER__clion_Debug /Users/hosung/Workspace/hosung/cpp/clion/BOJ_18116.cpp || cmake_object_order_depends_target_clion
-  DEP_FILE = CMakeFiles/clion.dir/BOJ_18116.cpp.o.d
+build CMakeFiles/clion.dir/Prog_요격_시스템.cpp.o: CXX_COMPILER__clion_Debug /Users/hosung/Workspace/hosung/cpp/clion/Prog_요격_시스템.cpp || cmake_object_order_depends_target_clion
+  DEP_FILE = CMakeFiles/clion.dir/Prog_요격_시스템.cpp.o.d
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -mmacosx-version-min=13.0 -fcolor-diagnostics -std=gnu++17
   OBJECT_DIR = CMakeFiles/clion.dir
   OBJECT_FILE_DIR = CMakeFiles/clion.dir
@@ -63,7 +63,7 @@ build CMakeFiles/clion.dir/BOJ_18116.cpp.o: CXX_COMPILER__clion_Debug /Users/hos
 #############################################
 # Link the executable clion
 
-build clion: CXX_EXECUTABLE_LINKER__clion_Debug CMakeFiles/clion.dir/BOJ_18116.cpp.o
+build clion: CXX_EXECUTABLE_LINKER__clion_Debug CMakeFiles/clion.dir/Prog_요격_시스템.cpp.o
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -mmacosx-version-min=13.0
   OBJECT_DIR = CMakeFiles/clion.dir
   POST_BUILD = :

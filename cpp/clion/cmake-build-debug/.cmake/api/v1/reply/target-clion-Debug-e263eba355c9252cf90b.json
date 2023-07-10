@@ -24,7 +24,7 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 7,
+				"line" : 8,
 				"parent" : 0
 			}
 		]
@@ -94,7 +94,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "BOJ_18116.cpp",
+			"path" : "Prog_\uc694\uaca9_\uc2dc\uc2a4\ud15c.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],
