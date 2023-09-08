@@ -9,6 +9,7 @@ public class BOJ_10090 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         N = Integer.parseInt(br.readLine());
+
         arr = new int[N + 1];
 
         long ans = 0;

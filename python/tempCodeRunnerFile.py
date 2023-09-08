@@ -1,1 +1,3 @@
-2*t[i]
+
+# rotate(cube, 0)
+# print(cube)
