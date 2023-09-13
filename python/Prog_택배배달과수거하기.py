@@ -20,5 +20,3 @@ def solution(cap, n, deliveries, pickups):
         pi = get_next_idx(cap, pi, pickups)
         
     return ans
-    
-print(get_next_idx(4, 4, [1,0,3,1,2]))

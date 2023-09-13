@@ -37,6 +37,11 @@ def solution(park_, routes):
     for route in routes :
         d, k = route.split()
         k = int(k)
+        if can_go(sr,sc, d,k) :
+            sr += move[d][0] * k
+            sc += move[d][1] * k
+        
+    return sr, sc
         
         
     

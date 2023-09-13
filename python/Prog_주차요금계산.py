@@ -14,7 +14,6 @@ def cal_fee(fees, t) :
     if t <= fees[0] : return fees[1]
     else :
         return fees[1] + math.ceil((t-fees[0]) / fees[2]) * fees[3]
-        
     
 
 def solution(fees, records):
@@ -30,7 +29,9 @@ def solution(fees, records):
             
     for num, time in page.items() :
         total_time[num] += cal_time("23:59", time)
-            
-    print(total_time)
         
+    ans = []    
+    for num in sorted(total_time.keys()) :
+        ans.append(cal_fee(fees, total_time[num]))
         
+    return ans

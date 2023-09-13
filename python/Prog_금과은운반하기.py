@@ -18,7 +18,6 @@ def check(x) :
         max_g += min(g[i], cnt*w[i])
         max_s += min(s[i], cnt*w[i])
         can_move += min(g[i]+s[i], cnt*w[i])
-        
     
     if max_g >= a and max_s >= b and can_move >= a+b :
         return True

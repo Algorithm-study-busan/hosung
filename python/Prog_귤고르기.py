@@ -18,8 +18,6 @@ def solution(K, tangerine):
         tmp += v
         ans += 1
         
-        print(ans, k)
-        
         if tmp >= K : break
         
     return min(ans, K)

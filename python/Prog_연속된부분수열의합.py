@@ -7,10 +7,10 @@ def solution(arr, k):
     min_len = 987654321
     
     while s > 0 and e > 0 :
-        if sum < k :
+        if total < k :
             s -= 1
             total += arr[s]
-        elif sum > k :
+        elif total > k :
             e -= 1
             total -= arr[e]
         else :
@@ -20,3 +20,5 @@ def solution(arr, k):
                 ans_e = e
             s -= 1
             total += arr[s]
+            
+    return [ans_s, ans_e]

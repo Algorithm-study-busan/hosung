@@ -22,9 +22,9 @@ def in_range(r,c) :
 
 def dfs(r,c, tmp) :
     global ans
-    if visited[r][c][tmp] :
+    if visited[r][c][len(tmp)] :
         return False
-    visited[r][c][tmp] = True
+    visited[r][c][len(tmp)] = True
     
     if len(tmp) == K :
         if r == er and c == ec : 

@@ -5,7 +5,6 @@ def cal_height(x, k) :
 def solution(k, d):
     ans = 0
     for x in range(0, d+1, k) :
-        print(x,k)
         ans += cal_height(x, d)//k + 1
     return ans
 

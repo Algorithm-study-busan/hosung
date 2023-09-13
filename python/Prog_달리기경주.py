@@ -7,15 +7,8 @@ def solution(players, callings):
     for call in callings :
         rank = ranks[call]
         players[rank], players[rank-1] = players[rank-1], players[rank]
-        rank[players[rank]], rank[players[rank-1]] = rank[players[rank-1]], rank[players[rank]] 
+        ranks[players[rank]], ranks[players[rank-1]] = ranks[players[rank-1]], ranks[players[rank]] 
         
-    
-d = {
-    "a" : 1,
-    "b" : 2,
-}
-
-d["a"], d['b'] = d['b'], d['a']
-print(d)
+    return players
         
         

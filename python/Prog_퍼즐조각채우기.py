@@ -5,6 +5,8 @@ dr = [-1,0,1,0]
 dc = [0,-1,0,1]
 
 def is_equal(p1, p2) :
+    p1.sort()
+    p2.sort()
     if len(p1) != len(p2) : return False
     mr = p1[0][0] - p2[0][0]
     mc = p1[0][1] - p2[0][1]
@@ -81,7 +83,7 @@ def solution(game_board, table):
                 puzzle = []
                 puzzle.append(find_puzzle(tables[0], r, c, t_visited, 0))
                 puzzle.append(find_puzzle_only(tables[1], c,N-r-1, 0))
-                puzzle.append(find_puzzle_only(tables[2], N-r-1,c, 0))
+                puzzle.append(find_puzzle_only(tables[2], N-r-1,N-c-1, 0))
                 puzzle.append(find_puzzle_only(tables[3], N-1-c,r, 0))
                 t_arr.append(puzzle)
             
@@ -95,11 +97,8 @@ def solution(game_board, table):
             if used[i] : continue
             for t in ts :
                 if is_equal(b, t) : 
-                    print(b, i)
                     ans += len(t)
                     used[i] = True
                     flag = True
                     break
     return ans
-                
-print(solution([[1,1,0,0,1,0],[0,0,1,0,1,0],[0,1,1,0,0,1],[1,1,0,1,1,1],[1,0,0,0,1,0],[0,1,1,1,0,0]], [[1,0,0,1,1,0],[1,0,1,0,1,0],[0,1,1,0,1,1],[0,0,1,0,0,0],[1,1,0,1,1,0],[0,1,0,0,0,0]]))

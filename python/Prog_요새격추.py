@@ -12,15 +12,29 @@ class Roket :
             return self.start < other.start
         return self.x < other.x
     
-arr = []
-arr.append(Roket(3, False, 1))
-arr.append(Roket(2, True, 1))
-arr.append(Roket(1, False, 1))
-arr.append(Roket(2, False, 1))
-
-arr.sort()
-
-for roket in arr :
-    print(roket.x, roket.start)
+def solution(targets):
+    roket_arr = []
+    for i, target in enumerate(targets) :
+        roket_arr.append(Roket(target[0], True, i))
+        roket_arr.append(Roket(target[1], False, i))
+        
+    roket_arr.sort()
+    
+    distroied = [False for _ in range(len(targets))]
+    on_target = []
+    
+    ans = 0
+    
+    for i,roket in enumerate(roket_arr) :
+        if distroied[roket.n] or (i > 0 and roket.x == roket_arr[i-1] and roket.start == False and roket_arr[i-1] == False): continue
+        if roket.start :
+            on_target.append(roket.n)
+        else :
+            ans += 1
+            while on_target :
+                distroied[on_target.pop()] = True
+            
+    return ans
+        
         
         

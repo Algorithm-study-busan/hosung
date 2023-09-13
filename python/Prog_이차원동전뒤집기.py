@@ -18,23 +18,23 @@ def changeC(c) :
         
 def dfs(idx, cnt) :
     global ans
-    if idx == R*C :
+    if idx == R+C :
         if board == target :
             ans = min(ans, cnt)
         return
     
-    r = idx // C
-    c = idx % C
-    if board[r][c] == target[r][c] :
+    if idx < R :
+        changeR(idx)
+        dfs(idx+1, cnt+1)
+        changeR(idx)
         dfs(idx+1, cnt)
     else :
-        changeR(r)
+        changeC(idx-R)
         dfs(idx+1, cnt+1)
-        changeR(r)
-        
-        changeC(c)
-        dfs(idx+1, cnt+1)
-        changeC(c)
+        changeC(idx-R)
+        dfs(idx+1, cnt)
+    
+    
     
 
 def solution(beginning, t):
