@@ -29,13 +29,9 @@ def solution(numbers):
     
     ans_arr = []
     
-    print(*str_bin)
-    
     for s in str_bin :
         ans = 1
         binary_search(0, len(s)-1, False, s)
         ans_arr.append(ans)
     
     return ans_arr
-    
-print(solution([7, 42, 5]))

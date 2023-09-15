@@ -34,7 +34,6 @@ def bfs(x, y) :
     
     while q :
         cx, cy = q.popleft()
-        print(cx,cy)
         if cx == itemX and cy == itemY : 
             return visited[cx][cy]
         for i in range(4) :
@@ -45,8 +44,6 @@ def bfs(x, y) :
             q.append([nx,ny])
             
     return -1
-    
-    
         
 
 def solution(rectangle_, characterX, characterY, itemX_, itemY_):
@@ -61,15 +58,5 @@ def solution(rectangle_, characterX, characterY, itemX_, itemY_):
         
     for x in range(1, MAX) :
         for y in range(1, MAX) :
-            path[x][y] = is_path(x,y)
-            
-    for x in range(20) :
-        for y in range(20) :
-            print(1 if path[x][y] else 0, end = " ")
-        print()            
+            path[x][y] = is_path(x,y)        
     return bfs(characterX*2, characterY*2)//2
-
-
-
-
-print(solution([[1,1,7,4],[3,2,5,5],[4,3,6,9],[2,6,8,8]], 1,3,7,8))

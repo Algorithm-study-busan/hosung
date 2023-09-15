@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.25)
 project(clion)
 
 set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 #add_executable(clion BOJ_12764.cpp)
 #add_executable(clion BOJ_18116.cpp)
@@ -10,5 +11,8 @@ set(CMAKE_CXX_STANDARD 17)
 #add_executable(clion BOJ_16985.cpp)
 #add_executable(clion note.cpp)
 #add_executable(clion BOJ_1285.cpp)
-add_executable(clion BOJ_18809.cpp)
-
+#add_executable(clion BOJ_18809.cpp)
+#add_executable(clion BOJ_1195.cpp)
+#add_executable(clion BOJ_10711.cpp)
+#add_executable(clion BOJ_1035.cpp)
+#add_executable(clion BOJ_12946.cpp)

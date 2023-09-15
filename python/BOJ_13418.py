@@ -1,3 +1,6 @@
+from sys import stdin
+input = stdin.readline
+
 edges = []
 V,E = map(int, input().split())
 SET = [i for i in range(V+1)]

@@ -12,6 +12,5 @@ def solution(r1, r2):
         
     return ans*4
 
-print(solution(2,3))
         
         

@@ -13,9 +13,11 @@ def solution(topping):
         s.add(t)
         accumulate_set_reverse.append(len(s))
         
-    print(accumulate_set)
-    print(accumulate_set_reverse)
-    
-solution([1, 2, 1, 3, 1, 4, 1, 2])
+    ans = 0
+    for i in range(len(topping) - 1) :
+        if accumulate_set[i] == accumulate_set_reverse[len(topping) -i -2] :
+            ans += 1
+            
+    return ans
     
     

@@ -13,7 +13,6 @@ def solution(n):
     
     for i in range(7, n+1) :
         dp[i] = dp[i-1] + dp[i-2]*2 + dp[i-3]*6 + dp[i-4] - dp[i-6]
+        dp[i] %= MOD
         
     return dp[n]
-
-print(solution(8))

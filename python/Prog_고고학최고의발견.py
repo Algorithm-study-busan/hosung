@@ -32,7 +32,6 @@ def dfs(c, cnt) :
 def cal_cnt(copy_board, cnt) :
     global ans
     ret = cnt
-    print(copy_board, cnt)
     for r in range(R-1) :
         for c in range(R) :
             if copy_board[r][c] != 0 :
@@ -50,5 +49,3 @@ def solution(clockHands):
     
     dfs(0, 0)
     return ans
-
-print(solution([[1,1],[1,0]]))

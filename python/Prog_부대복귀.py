@@ -11,7 +11,7 @@ def bfs(s) :
     while q :
         cur_node = q.popleft()
         for next_node in edges[cur_node] :
-            if dist[next_node] == -1 : continue;
+            if dist[next_node] != -1 : continue;
             dist[next_node] = dist[cur_node] + 1
             q.append(next_node)
 

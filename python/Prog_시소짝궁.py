@@ -36,7 +36,7 @@ def solution(weights):
         w = weights[i]
         ans += count(0, i-1, w1, w)
         ans += count(0, i-1, w3, 2*w)
-        ans += count(0, i-1, w3, 2*w)
+        ans += count(0, i-1, w4, 2*w)
         ans += count(0, i-1, w4, 3*w)
     
     return ans
@@ -46,6 +46,5 @@ def solution(weights):
         
 arr = [1,1,2,2,3,3]
 
-print(count(5,5,arr,4))
         
     

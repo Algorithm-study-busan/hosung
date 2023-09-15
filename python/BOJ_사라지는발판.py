@@ -56,6 +56,3 @@ def win(board, ar, ac, br, bc, order) :
 
 def solution(board, aloc, bloc):
     return win(board, aloc[0], aloc[1], bloc[0], bloc[1], 1)[1]
-
-
-print(solution([[1,1,1], [1,1,1], [1,1,1]], [1,0], [0,0]))

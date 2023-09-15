@@ -1,5 +1,3 @@
-
-
 def recur(l, r, s, e, k) :
     if s <= l and r <= e : return 4**k
     if e < l or s > r : return 0

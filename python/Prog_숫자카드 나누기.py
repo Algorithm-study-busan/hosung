@@ -6,8 +6,29 @@ def gcd(a, b) :
         c = a % b
     return b
 
-def solution(arrayA, arrayB):
-    answer = 0
-    return answer
+def cal_array_gcd(array) : 
+    ret = array[0]
+    
+    for x in array :
+        ret = gcd(ret, x)
+        
+    return ret
 
-print(gcd(16, 30))
+def solution(arrayA, arrayB):
+    gcdA = cal_array_gcd(arrayA)
+    gcdB = cal_array_gcd(arrayB)
+    
+    ansA = gcdA
+    ansB = gcdB
+    
+    for b in arrayB :
+        if b % gcdA == 0 : 
+            ansA = 0
+            break
+        
+    for a in arrayA :
+        if a % gcdB == 0 :
+            ansB = 0
+            break
+        
+    return max(ansA, ansB)

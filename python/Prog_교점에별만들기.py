@@ -15,21 +15,24 @@ def solution(line):
             if x != int(x) : continue
             
             meet.append([int(x), int(y)])
-            
+    
     meet.sort(key=lambda x : x[0])
     X = meet[-1][0] - meet[0][0] + 1
     sx = meet[0][0]
     meet.sort(key=lambda x : x[1])
-    Y = meet[-1][0] - meet[0][0] + 1
+    Y = meet[-1][1] - meet[0][1] + 1
     sy = meet[-1][1]
     
-    ans = []
+    board = []
     for _ in range(Y) :
-        ans.append(['.']*X)
+        board.append(['.']*X)
         
     for x,y in meet :
-        ans[sy-y][x - sx] = '*'
-    print(ans)
+        board[sy-y][x - sx] = '*'
+    ans = []
+    for b in board :
+        ans.append("".join(b))
+    return ans
                 
             
             

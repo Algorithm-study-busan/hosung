@@ -59,5 +59,3 @@ def solution(m):
     to_E = bfs(lr,lc,'E')
     
     return -1 if to_L == -1 or to_E == -1 else to_L + to_E
-
-print(solution(["SOOOL","XXXXO","OOOOO","OXXXX","OOOOE"]))

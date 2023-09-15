@@ -11,7 +11,6 @@ def solution(data, col, row_begin, row_end):
     ans = 0
     for i in range(row_begin, row_end+1) :
         ans ^= cal_sum(data[i-1], i)
-    print(ans)
     return ans
         
         

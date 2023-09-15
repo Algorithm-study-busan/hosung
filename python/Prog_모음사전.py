@@ -32,5 +32,5 @@ def solution(word):
     for i, x in enumerate(arr, 1) :
         if word == x : return i
 
-solution('A')
+
     

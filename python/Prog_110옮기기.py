@@ -28,9 +28,5 @@ def solution(ss):
                     s_removed.pop()
                     cnt += 1
         
-        print(s_removed, cnt)
         ans.append(find_ans("".join(s_removed), cnt))
     return ans
-
-
-print(solution(["100111100"]))

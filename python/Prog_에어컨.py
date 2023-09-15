@@ -1,9 +1,9 @@
 import sys
-sys.setrecursionlimit(100_000)
+sys.setrecursionlimit(1_000_000)
 
 MAX = 1000
 INF = 987654321
-dp = [[-1 for _ in range(MAX)] for _ in range(51)]
+dp = [[-1 for _ in range(MAX)] for _ in range(2051)]
 
 temperature = 0
 t1 = 0
@@ -32,9 +32,9 @@ def find_dp(now_t, idx) :
 
 def solution(temperature_, t1_, t2_, a_, b_, onboard_):
     global temperature, t1, t2, a, b, onBoard
-    temperature = temperature_ + 10
-    t1 = t1_ + 10
-    t2 = t2_ + 10
+    temperature = temperature_ + 1010
+    t1 = t1_ + 1010
+    t2 = t2_ + 1010
     a = a_ 
     b = b_  
     onBoard = onboard_

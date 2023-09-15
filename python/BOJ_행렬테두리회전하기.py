@@ -36,8 +36,7 @@ def solution(rows, columns, queries):
     for r in range(rows) :
         for c in range(columns) :
             board[r][c] = r*columns + c + 1
-    print(board)
-    print(rotate(board, 0,0, 3, 2))
-    print(board)
-    
-solution(4, 3, 3)
+    ans = []
+    for r1,c1, r2,c2 in queries :
+        ans.append(rotate(board, r1-1,c1-1, r2-1,c2-1))
+    return ans

@@ -7,5 +7,3 @@ def cal(n) :
 
 def solution(storey):
     return cal(storey)
-
-print(solution(11))

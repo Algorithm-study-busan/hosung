@@ -21,15 +21,12 @@ def solution(n):
         dp[i] = dp[i-1] + 2*dp[i-2] + 5*dp[i-3]
         dp[i] %= MOD
         
-        
         mul = [2,2,2]
         mul[i % 3] = 4
         
         for k in range(3) :
             dp[i] += dp_accumulated_mod[k] * mul[k]
             dp[i] %= MOD
-        
-            
             
         if i % 3 == 1 or i % 3 == 2:
             dp[i] +=2 
@@ -39,7 +36,3 @@ def solution(n):
         dp_accumulated_mod[i%3] += dp[i-3]
         
     return dp[n]
-
-print(solution(7))
-print(solution(8))
-print(solution(9))

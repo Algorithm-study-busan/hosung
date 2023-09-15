@@ -98,7 +98,3 @@ def f() :
     
 def h() :
     arr.append(3)
-    
-# f()
-h()
-print(arr)

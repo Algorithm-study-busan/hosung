@@ -19,12 +19,11 @@ def bfs(x,y,n) :
     
     while q :
         cur = q.popleft()
-        print(cur)
         if cur == y :
             return visited[cur]
         for func in funcs :
             nxt = func(cur)
-            if visited[nxt]>=0 or nxt > MAX : continue
+            if nxt >= MAX or visited[nxt]>=0 : continue
             visited[nxt] = visited[cur]+1
             q.append(nxt)
         
@@ -34,5 +33,3 @@ def solution(x, y, nn):
     global n
     n = nn
     return bfs(x,y,n)
-
-print(solution(10,40,5))

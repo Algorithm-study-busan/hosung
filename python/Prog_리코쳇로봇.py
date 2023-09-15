@@ -18,7 +18,7 @@ def next_position(r, c, i) :
     return (r,c)
 
 def bfs(r, c) :
-    q = deque((r,c))
+    q = deque([(r,c)])
     visited[r][c] = 0
     while q :
         cr, cc = q.popleft()

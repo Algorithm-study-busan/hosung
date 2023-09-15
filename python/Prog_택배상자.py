@@ -7,7 +7,6 @@ def solution(order):
         
     while q :
         od = q[0]
-        print(q)
         if len(boxes) != 0 and boxes[0] == od :
             boxes.popleft()
             q.popleft()

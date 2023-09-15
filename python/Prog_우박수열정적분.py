@@ -20,6 +20,12 @@ def solution(k, ranges):
         
     print(accumulated_area)
     
-    # return answer
+    ans = []
+    for s, e in ranges :
+        if len(arr) + e <= s : 
+            ans.append(-1)
+        else : 
+            ans.append(accumulated_area[e-1] - accumulated_area[s])
+    return ans
 
 solution(5, [])

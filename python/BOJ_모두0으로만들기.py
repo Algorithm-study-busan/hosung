@@ -1,20 +1,22 @@
+import sys
+sys.setrecursionlimit(1_000_000)
+
 edges = [[] for _ in range(300_001)]
 weight = []
 ans = 0
 
 def dfs(parent, cur) :
+    global ans
     ret = weight[cur]
-    for nxt in edges[nxt] :
+    for nxt in edges[cur] :
         if parent == nxt : continue 
         x = dfs(cur, nxt)
         ret += x
-        ans += x
+        ans += abs(x)
     return ret
-        
-    
 
 def solution(a_, edges_):
-    global edges, weight, ans
+    global edges, weight
     weight = a_
     for a,b in edges_ :
         edges[a].append(b)

@@ -9,7 +9,6 @@ def find_e(n) :
 
 def find_dp(n) :
     global dp
-    print(n)
     if dp[n] != 0 : return dp[n]
     if n == 0 : return 0
     if n == 10**(len(str(n))-1) : return 1
