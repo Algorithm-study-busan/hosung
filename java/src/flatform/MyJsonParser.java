@@ -1,14 +1,16 @@
 package flatform;
 
 import java.lang.reflect.Array;
+import java.net.SocketAddress;
 import java.util.*;
 
 public class MyJsonParser {
-    public static void main(String[] args) {
-        String json = readJSONStringFromKeyBoard();
-        HashMap<String, Object> stringObjectHashMap = parseJSONString(json);
-        String res = convertHashMapToJsonString(stringObjectHashMap, 0);
-        System.out.println(res);
+    private JsonEscapeCharacterHandler escapeHandler;
+    public MyJsonParser() {
+        this.escapeHandler = new JsonEscapeCharacterHandler();
+    }
+    public HashMap<String, Object> parse(String jsonString) throws Exception {
+        return parseJSONString(escapeHandler.handleEscapedCharacters(jsonString));
     }
 
     public static String readJSONStringFromKeyBoard() {
@@ -62,14 +64,23 @@ public class MyJsonParser {
                 }
                 else {
                     for (String listElement : listElements) {
-                        listValue.add(Integer.parseInt(listElement));
+                        if (listElement.contains(".")) {
+                            listValue.add(Double.parseDouble(listElement));
+                        } else {
+                            listValue.add(Integer.parseInt(listElement));
+                        }
                     }
                 }
                 ret.put(key, listValue);
             }
             else {
-                int intValue = Integer.parseInt(value);
-                ret.put(key, intValue);
+                if (value.contains(".")) {
+                    double doubleValue = Double.parseDouble(value);
+                    ret.put(key, doubleValue);
+                } else {
+                    int intValue = Integer.parseInt(value);
+                    ret.put(key, intValue);
+                }
             }
         }
         return ret;

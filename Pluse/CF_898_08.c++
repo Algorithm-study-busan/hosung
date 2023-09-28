@@ -45,7 +45,6 @@ void distToCycle(int n, int dist[MAX]) {
 
 void solve(int N) { 
     for (int n=1;n<=N;n++) {
-        // cout << inDegree[n] << " " << dist_M[n] << " " << dist_V[n] << "\n";
         if (inDegree[n] == 2 && dist_M[n] > dist_V[n]) {
             cout << "YES\n";
             return;

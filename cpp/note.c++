@@ -3,6 +3,6 @@
 using namespace std;
 
 int main() {
-    pair<int,int> p = {1,2};
-    cout << p.first << " " << p.second;
+    vector<pair<int,int>> arr;
+    arr.push_back({1,2});
 }
