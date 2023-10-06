@@ -1,3 +1,1 @@
-
-# rotate(cube, 0)
-# print(cube)
+print(q_split)
