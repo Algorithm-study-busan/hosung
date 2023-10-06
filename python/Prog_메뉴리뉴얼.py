@@ -1,39 +1,43 @@
 from itertools import combinations
 
+contain = [[False for _ in range(26)] for _ in range(20)]
 
-def is_contain(order : str, menu) :
+def is_contain(order : str, menu, idx) :
     for m in menu :
-        if order.count(m) == 0 : return False
+        if contain[idx][ord(m)-65] == 0 : return False
     return True
 
 def count(orders, menu) :
     ret = 0
-    for order in orders :
-        if is_contain(order, menu) : ret += 1
+    for i, order in enumerate(orders) :
+        if is_contain(order, menu, i) : ret += 1
     return ret
     
 
 def solution(orders, course):
-    alpha = set()
-    for order in orders :
-        for food in order :
-            alpha.add(food)
-            
-    alpha = sorted(list(alpha))
+    global contain
     
+    for i, order in enumerate(orders) :
+        for o in order :
+            contain[i][ord(o)-65] = True
+    
+    
+    comb = set()
+    for order in orders :
+        for c in course :
+            comb |= set(combinations(sorted(order), c))
+                
     tmp = [[] for _ in range(11)]
     tmp_count = [0 for _ in range(11)]
             
-    for c in course :
-        for menu in combinations(alpha, c) :
-            cnt = count(orders, menu)
-            
-            if cnt >= 2:
-                print(''.join(menu, cnt))
-            if cnt >= 2 and tmp_count[c] < cnt :
-                tmp[c] = [[''.join(menu)]]
-            elif cnt >= 2 and tmp_count[c] == cnt :
-                tmp[c].append(''.join(menu))
+    for menu in comb :
+        cnt = count(orders, menu)
+        
+        if cnt >= 2 and tmp_count[len(menu)] < cnt :
+            tmp[len(menu)] = [''.join(menu)]
+            tmp_count[len(menu)] = cnt
+        elif cnt >= 2 and tmp_count[len(menu)] == cnt :
+            tmp[len(menu)].append(''.join(menu))
             
     ans = []
     for t in tmp :
