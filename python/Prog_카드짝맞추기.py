@@ -86,7 +86,6 @@ def solution(board_, sr, sc):
     ans = 987654321
     for a in permutations(arr) :
         ans = min(ans, dfs(a, sr, sc, 0))
-        print(ans, a)
     return ans
     
     

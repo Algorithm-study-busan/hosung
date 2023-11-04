@@ -16,7 +16,6 @@ mapping = {
 cnt = [[] for _ in range(10_000)]
 
 def cal_count(arr, x) :
-    print(arr, x)
     lo = 0
     hi = len(arr)-1
     
@@ -36,13 +35,9 @@ def count(arr) :
     
     cnt[to_code(code_arr)].append(x)
     
-    print(code_arr)
-    print("-----")
-    
     for i in range(4) :
         tmp = code_arr[i]
         code_arr[i] = '0'
-        print(code_arr)
         cnt[to_code(code_arr)].append(x)
         code_arr[i] = tmp
         
@@ -52,7 +47,6 @@ def count(arr) :
             tmp2 = code_arr[j]
             code_arr[i] = '0'
             code_arr[j] = '0'
-            print(code_arr)
             cnt[to_code(code_arr)].append(x)
             code_arr[i] = tmp1
             code_arr[j] = tmp2
@@ -66,7 +60,6 @@ def count(arr) :
                 code_arr[i] = '0'
                 code_arr[j] = '0'
                 code_arr[k] = '0'
-                print(code_arr)
                 cnt[to_code(code_arr)].append(x)
                 code_arr[i] = tmp1
                 code_arr[j] = tmp2
@@ -85,19 +78,15 @@ def solution(info, query):
         info_sort.append(x.split())
     info_sort.sort(key=lambda x:int(x[-1]))
     
-    print(info_sort)
-    
     for arr in info_sort :
         count(arr)
         
     for q in query :
         q_split = list(map(str.strip, q.split('and')))
-        # print(q_split)
         x = int(q_split[-1].split()[1])
         
         code_arr = [mapping[q_split[0]], mapping[q_split[1]], mapping[q_split[2]], mapping[q_split[3].split()[0]]]
         code = to_code(code_arr)
-        print(code)
         ans.append(cal_count(cnt[code], x))
         
     return ans

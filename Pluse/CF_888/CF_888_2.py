@@ -14,7 +14,3 @@ for _ in range(T) :
     copy = arr[:]
     copy.sort()
     solve(arr,copy)
-    
-            
-    
-    
