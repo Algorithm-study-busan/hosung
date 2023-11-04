@@ -6,4 +6,5 @@
         "ostream": "cpp",
         "iostream": "cpp"
     },
+    "cmake.sourceDirectory": "/Users/hosung/workspace/hosung/cpp/clion",
 }

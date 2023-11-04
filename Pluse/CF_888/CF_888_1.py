@@ -7,7 +7,6 @@ for _ in range(T) :
     arr = list(map(int, input().split()))
     ans = 0
     for a in arr :
-        if abs(a-H) % k != 0 or abs(a-H) // k >= m : continue
-        print(a)
+        if abs(a-H) % k != 0 or abs(a-H) // k >= m or a == H: continue
         ans += 1
     print(ans)

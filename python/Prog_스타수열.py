@@ -16,15 +16,10 @@ def solution(arr):
     for i,a in enumerate(arr) :
         if i == 0 : 
             check[a] = True
-            cnt[a] += 1
-        elif last_idx[a] == i-1 : 
-            if not check[a] :
-                cnt[a] += 1
-        elif check[a] and i - last_idx[a] > 2 :
+        if check[a] and i - last_idx[a] > 2 :
             check[a] = False
-            cnt[a] += 1
-        else :
-            cnt[a] += 1
+                
+        cnt[a] += 1
         last_idx[a] = i
 
     print(cnt)
