@@ -5,7 +5,9 @@
         "vector": "cpp",
         "ostream": "cpp",
         "iostream": "cpp",
-        "queue": "cpp"
+        "queue": "cpp",
+        "iosfwd": "cpp",
+        "string": "cpp"
     },
     "cmake.sourceDirectory": "/Users/hosung/workspace/hosung/cpp/clion",
 }
